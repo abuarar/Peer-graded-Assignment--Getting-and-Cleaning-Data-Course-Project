@@ -20,7 +20,8 @@ X_test_raw<-readLines("./UCI HAR Dataset/test/X_test.txt")
 y_test_raw<-readLines("./UCI HAR Dataset/test/y_test.txt")
 #Reading raw data from *.txt data files
 
-features<-substring(features_raw,5) 
+features<-str_split_fixed(features_raw,pattern = "( )+",n=2)
+features<-features[,2] 
 #Extract the feature names vector from features.txt to apply it to column names in X set
 
 cleanX = function(x){
