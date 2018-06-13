@@ -78,6 +78,7 @@ TidyData<-rbind(TrainData,TestData)
 
 TidyData_Point5<-aggregate(TidyData[4:89],by=TidyData[c("activity_number","activity_labels","subject_number")], FUN=mean)
 TidyData_Point5<-arrange(TidyData_Point5,activity_number)
+names(TidyData_Point5)[4:89]<-paste("AVG:",names(TidyData_Point5)[4:89])
 #From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject ((Point-5 in Project requirements))
 
 write.table(TidyData_Point5,file = "./TidyData_Point5.txt",row.names = FALSE)
