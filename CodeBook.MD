@@ -10,9 +10,12 @@ A)-"activity_number","activity_labels" respectivily:
     5              STANDING
     6              LAYING
     
-B)-"subject_number": one of the 1:30 subject who conducted the experiment.
-#Data was grouped by variables: ("activity_number","activity_labels" and "subject_number")respectivily
-===========
+B)-"subject_number": 
+==========
+one of the 1:30 subject who conducted the experiment.
+
+##Data was grouped by variables: ("activity_number","activity_labels" and "subject_number")respectivily
+
 
 C)-AVG calculated for variables in the following list:
 ===========
