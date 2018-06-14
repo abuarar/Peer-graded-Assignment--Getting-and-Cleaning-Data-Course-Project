@@ -1,6 +1,8 @@
-#Variables in "TidyData_Point5.txt" as requested by assignement
+Variables in "TidyData_Point5.txt" as requested by assignement
 ==========
-A)-"activity_number","activity_labels" respectivily: 
+ 
+A)-"activity_number","activity_labels" respectivily:
+========== 
     1              WALKING
     2              WALKING_UPSTAIRS
     3              WALKING_DOWNSTAIRS
@@ -10,8 +12,10 @@ A)-"activity_number","activity_labels" respectivily:
     
 B)-"subject_number": one of the 1:30 subject who conducted the experiment.
 #Data was grouped by variables: ("activity_number","activity_labels" and "subject_number")respectivily
+===========
 
 C)-AVG calculated for variables in the following list:
+===========
 "AVG: tBodyAcc-mean()-X"                   "AVG: tBodyAcc-mean()-Y"                    "AVG: tBodyAcc-mean()-Z"                   
 "AVG: tBodyAcc-std()-X"                    "AVG: tBodyAcc-std()-Y"                     "AVG: tBodyAcc-std()-Z"                     
 "AVG: tGravityAcc-mean()-X"                "AVG: tGravityAcc-mean()-Y"                 "AVG: tGravityAcc-mean()-Z"                
