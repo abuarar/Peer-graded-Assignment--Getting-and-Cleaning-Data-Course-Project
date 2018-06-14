@@ -72,10 +72,10 @@ TrainData<-cbind(subject_train_tidy,y_train_tidy,TrainSetOnlyMeanStd)
 TestData<-cbind(subject_test_tidy,y_test_tidy,TestSetOnlyMeanStd)
 #Merge all Test data
 TidyData<-rbind(TrainData,TestData)
-TidyData<-merge(TidyData,activity_labels_tidy,by.x="activity_number",by.y="activity_number")
+TidyData<-merge(activity_labels_tidy,TidyData,by.x="activity_number",by.y="activity_number")
 #Merges the training and the test sets to create one data set (Point-1 in Project requirements), And add activity label to TidyData
 
-TidyData_Point5<-aggregate(TidyData[3:88],by=TidyData[c("activity_number","activity_labels","subject_number")], FUN=mean)
+TidyData_Point5<-aggregate(TidyData[4:89],by=TidyData[c("activity_number","activity_labels","subject_number")], FUN=mean)
 TidyData_Point5<-arrange(TidyData_Point5,activity_number)
 names(TidyData_Point5)[4:89]<-paste("AVG:",names(TidyData_Point5)[4:89])
 #From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject ((Point-5 in Project requirements))
