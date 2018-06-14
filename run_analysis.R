@@ -52,12 +52,10 @@ names(activity_labels_tidy)<-c("activity_number","activity_labels")
 y_train_tidy<-as.numeric(as.character(y_train_raw))
 y_train_tidy<-as.data.frame(y_train_tidy)
 names(y_train_tidy)<-"activity_number"
-Activity_Train<-merge(y_train_tidy,activity_labels_tidy,by.x="activity_number",by.y="activity_number")
 
 y_test_tidy<-as.numeric(as.character(y_test_raw))
 y_test_tidy<-as.data.frame(y_test_tidy)
 names(y_test_tidy)<-"activity_number"
-Activity_Test<-merge(y_test_tidy,activity_labels_tidy,by.x="activity_number",by.y="activity_number")
 
 subject_train_tidy<-as.numeric(as.character(subject_train_raw))
 subject_train_tidy<-as.data.frame(subject_train_tidy)
@@ -69,14 +67,15 @@ names(subject_test_tidy)<-"subject_number"
 #Appropriately labels the data set with descriptive variable names (Point-4 in Project requirements)
 
 
-TrainData<-cbind(subject_train_tidy,Activity_Train,TrainSetOnlyMeanStd)
+TrainData<-cbind(subject_train_tidy,y_train_tidy,TrainSetOnlyMeanStd)
 #Merge all Train data 
-TestData<-cbind(subject_test_tidy,Activity_Test,TestSetOnlyMeanStd)
+TestData<-cbind(subject_test_tidy,y_test_tidy,TestSetOnlyMeanStd)
 #Merge all Test data
 TidyData<-rbind(TrainData,TestData)
-#Merges the training and the test sets to create one data set (Point-1 in Project requirements)
+TidyData<-merge(TidyData,activity_labels_tidy,by.x="activity_number",by.y="activity_number")
+#Merges the training and the test sets to create one data set (Point-1 in Project requirements), And add activity label to TidyData
 
-TidyData_Point5<-aggregate(TidyData[4:89],by=TidyData[c("activity_number","activity_labels","subject_number")], FUN=mean)
+TidyData_Point5<-aggregate(TidyData[3:88],by=TidyData[c("activity_number","activity_labels","subject_number")], FUN=mean)
 TidyData_Point5<-arrange(TidyData_Point5,activity_number)
 names(TidyData_Point5)[4:89]<-paste("AVG:",names(TidyData_Point5)[4:89])
 #From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject ((Point-5 in Project requirements))
