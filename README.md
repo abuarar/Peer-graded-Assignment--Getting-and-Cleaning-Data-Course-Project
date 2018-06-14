@@ -1,5 +1,7 @@
 # Peer-graded Assignment: Getting and Cleaning Data Course Project
-# The raw data given in this project is in data set 
+# The raw data given in this project is in this link 
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
 "Human Activity Recognition Using Smartphones Dataset Version 1.0"   By: Jorge L. Reyes-Ortiz, Davide Anguita, Alessandro Ghio, Luca Oneto (Smartlab)
 ==================================================================
 
